@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Salary Visualisation</title>
+		<link rel="stylesheet" type="text/css" href="/style.css">
+	</head>
+	<body ng-app="SalaryApp" ng-controller="SalaryController">
+	BASIC
+	<basic data="BASICs"></basic>
+	HRA
+	<hra data="HRAs"></hra>
+	TA
+	<ta data="TAs"></ta>
+	TDS
+	<tds data="TDSs"></tds>
+	Total
+	<total data="Total"></total>
+	
+	<script type="text/javascript" src="/bower_components/d3/d3.min.js"></script>
+	<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="/app.js"></script>
+	<script type="text/javascript" src="/chart.js"></script>
+	<!-- Directives -->
+	<script type="text/javascript" src="/directives/basic.js"></script>
+	<script type="text/javascript" src="/directives/hra.js"></script>
+	<script type="text/javascript" src="/directives/ta.js"></script>
+	<script type="text/javascript" src="/directives/tds.js"></script>
+	<script type="text/javascript" src="/directives/total.js"></script>
+</body>
+</html>
