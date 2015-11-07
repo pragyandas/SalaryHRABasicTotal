@@ -11,11 +11,11 @@ app.directive('chart', function($timeout) {
             var colors = ['#A2C180', '#3D7930', '#FFC6A5', '#FFFF42', '#DEF3BD'];
             $scope.color = colors[$scope.index || colors.length - 1];
             $scope.visible=false;
-            $scope.textValue = "";
+            $scope.textValue = {};
             $scope.valueChanged = function() {
                 $scope.$emit('ValueChanged', {
                     component: $scope.componentName,
-                    value: $scope.textValue,
+                    value: $scope.textValue.data,
                     barIndex: $scope.barIndex
                 });
                 $scope.visible=$scope.index?!$scope.visible:false;
@@ -27,7 +27,7 @@ app.directive('chart', function($timeout) {
                 scope.chart = new chart.barChart(scope.componentName, scope.color);
                 scope.chart.draw(scope.data, function(value, barIndex) {
                     scope.$apply(function() {
-                        scope.textValue = value;
+                        scope.textValue.data = value;
                         scope.barIndex = barIndex;
                         scope.visible=scope.index?!scope.visible:false;
                     });

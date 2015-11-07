@@ -120,18 +120,19 @@ app.controller('SalaryController', function($scope) {
 	$scope.total = [];
 
 	$scope.$on('ValueChanged', function(e, data) {
+		console.log(data);
 		switch (data.component) {
 			case 'basic':
-				$scope.data.basic[data.barIndex].value = data.value;
+				$scope.data.basic[data.barIndex].value = parseInt(data.value);
 				break;
 			case 'hra':
-				$scope.data.hra[data.barIndex].value = data.value;
+				$scope.data.hra[data.barIndex].value = parseInt(data.value);
 				break;
 			case 'ta':
-				$scope.data.ta[data.barIndex].value = data.value;
+				$scope.data.ta[data.barIndex].value = parseInt(data.value);
 				break;
 			case 'tds':
-				$scope.data.tds[data.barIndex].value = data.value;
+				$scope.data.tds[data.barIndex].value = parseInt(data.value);
 				break;
 		}
 

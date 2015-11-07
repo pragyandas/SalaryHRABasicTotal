@@ -54,6 +54,6 @@
   height: inherit;
 }
 .title{
-  font-family: sans-serif;
+  font-family: monospace;
   display:block;
 }
