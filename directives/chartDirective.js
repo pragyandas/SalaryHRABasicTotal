@@ -10,7 +10,7 @@ app.directive('chart', function($timeout) {
         controller: function($scope) {
             var colors = ['#A2C180', '#3D7930', '#FFC6A5', '#FFFF42', '#DEF3BD'];
             $scope.color = colors[$scope.index || colors.length - 1];
-            $scope.visible=$scope.index?true:false;
+            $scope.visible=false;
             $scope.textValue = "";
             $scope.valueChanged = function() {
                 $scope.$emit('ValueChanged', {
@@ -18,6 +18,7 @@ app.directive('chart', function($timeout) {
                     value: $scope.textValue,
                     barIndex: $scope.barIndex
                 });
+                $scope.visible=$scope.index?!$scope.visible:false;
             }
         },
         link: function(scope, element, attrs) {
@@ -28,6 +29,7 @@ app.directive('chart', function($timeout) {
                     scope.$apply(function() {
                         scope.textValue = value;
                         scope.barIndex = barIndex;
+                        scope.visible=scope.index?!scope.visible:false;
                     });
                 });
             }, 0);
