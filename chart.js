@@ -164,7 +164,9 @@
 				bars.enter()
 					.append("rect")
 					.attr('class', 'bar')
-					.transition()
+					
+
+				 bars.transition()
 					.ease('linear')
 					.duration(500)
 					.attr('y', function(d) {
