@@ -10,7 +10,7 @@ app.directive('chart', function($timeout) {
         controller: function($scope) {
             var colors = ['#A2C180', '#3D7930', '#FFC6A5', '#FFFF42', '#DEF3BD'];
             $scope.color = colors[$scope.index || colors.length - 1];
-            $scope.visible=true;
+            $scope.visible=$scope.index?true:false;
             $scope.textValue = "";
             $scope.valueChanged = function() {
                 $scope.$emit('ValueChanged', {
