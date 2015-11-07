@@ -29,7 +29,7 @@ app.directive('chart', function($timeout) {
                     scope.$apply(function() {
                         scope.textValue.data = value;
                         scope.barIndex = barIndex;
-                        scope.visible=scope.index?!scope.visible:false;
+                        scope.visible=scope.index?true:false;
                     });
                 });
             }, 0);
