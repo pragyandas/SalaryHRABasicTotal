@@ -3,6 +3,7 @@
 	<head>
 		<title>Salary Visualisation</title>
 		<link rel="stylesheet" type="text/css" href="/style.css">
+		<script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
 	</head>
 	<body ng-app="SalaryApp" ng-controller="SalaryController">
 		<div ng-repeat="(key,value) in data" ng-class="$index%2===0 ? 'left' : 'right'">
@@ -14,7 +15,6 @@
 		</div>	
 		<script type="text/javascript" src="/bower_components/d3/d3.min.js"></script>
 		<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js"></script>
-		<script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
 		<script type="text/javascript" src="/app.js"></script>
 		<script type="text/javascript" src="/chart.js"></script>
 		<!-- Directives -->
