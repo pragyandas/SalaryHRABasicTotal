@@ -6,7 +6,7 @@
 	</head>
 	<body ng-app="SalaryApp" ng-controller="SalaryController">
 		<div ng-repeat="(key,value) in data" ng-class="$index%2===0 ? 'left' : 'right'">
-			<div class="title">{{key | uppercase }}</div>
+			<div class="title" ng-cloak>{{key | uppercase }}</div>
 			<chart data="value" component-name="{{key}}" index="{{$index}}"></chart>
 		</div>
 		<div class="center" ng-if="total.length>0">
